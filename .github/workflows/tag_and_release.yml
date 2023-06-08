@@ -22,7 +22,7 @@ jobs:
 
       - name: Extract version
         run: |
-          dbtcoves_version=$(toml get --toml-path pyproject.toml tool.poetry.version)
+          dbtcoves_version=$(toml get pyproject.toml tool.poetry.version)
           echo "::set-output name=dbtcoves_version::$dbtcoves_version"
           echo "$dbtcoves_version"
 
