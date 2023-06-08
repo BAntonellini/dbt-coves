@@ -27,7 +27,7 @@ jobs:
           echo "::set-output name=dbtcoves_version::$dbtcoves_version"
 
       - name: Echo dbt-coves version
-        run: echo "v${{ steps.extract_version.outputs.dbtcoves_version }}"
+        run: echo "v${{ join('', steps.extract_version.outputs.dbtcoves_version) }}"
       # - name: Github tag and release
       #   uses: avakar/tag-and-release@v1
       #   with:
