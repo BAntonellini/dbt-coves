@@ -4,10 +4,6 @@ on:
   push:
     branches:
       - main
-  # workflow_run:
-  #   workflows: ["Publish new PyPi build version"]
-  #   types:
-  #     - completed
 
 jobs:
   tag_and_release:
