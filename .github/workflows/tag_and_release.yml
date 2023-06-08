@@ -22,10 +22,12 @@ jobs:
 
       - name: Extract version
         run: |
-          dbtcoves_version=$(toml get pyproject.toml tool.poetry.version)
+          dbtcoves_version=$(toml get --toml-path pyproject.toml tool.poetry.version)
           echo "::set-output name=dbtcoves_version::$dbtcoves_version"
           echo "$dbtcoves_version"
 
+      - name: Echo dbt-coves version
+        run: echo "v${{ steps.extract_version.outputs.dbtcoves_version }}"
       # - name: Github tag and release
       #   uses: avakar/tag-and-release@v1
       #   with:
